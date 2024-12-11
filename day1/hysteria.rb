@@ -27,3 +27,10 @@ def get_total_distance(left_list, right_list)
   sorted_right_list = right_list.sort
   sum_distances(sorted_left_list, sorted_right_list)
 end
+
+lines = File.readlines("input")
+input_matrix = lines.map{|l| l.split(/\s+/).map(&:to_i) }
+
+left_list = get_left_list(input_matrix)
+right_list = get_right_list(input_matrix)
+puts get_total_distance(left_list, right_list)
