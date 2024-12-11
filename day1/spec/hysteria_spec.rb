@@ -62,25 +62,12 @@ describe "Historian Hysteria" do
   end
 
   describe "how far apart" do
-    it "return the distance between smallest numbers" do
-      skip
-      expect(distance(1, 3)).to eq(2)
-    end
-
-    it "return the distance between second smallest numbers" do
-      skip
-      expect(distance(2, 3)).to eq(1)
-    end
-
-    it "return the distance between third smallest numbers" do
-      skip
-      expect(distance(3, 3)).to eq(0)
-    end
-  end
-
-  describe "how far apart" do
     it "return total distance between left and right list" do
       expect(sum_distances(sorted_left_list, sorted_right_list)).to eq(11)
+    end
+
+    it "return total distance between left and right list" do
+      expect(get_total_distance(left_list, right_list)).to eq(11)
     end
   end
 end
