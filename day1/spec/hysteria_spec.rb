@@ -10,6 +10,8 @@ example_list = [[3, 4],
 
 left_list = get_left_list(example_list)
 right_list = get_right_list(example_list)
+sorted_left_list = left_list.sort
+sorted_right_list = right_list.sort
 
 describe "Historian Hysteria" do
   describe "Get smallest numbers" do
@@ -73,6 +75,12 @@ describe "Historian Hysteria" do
     it "return the distance between third smallest numbers" do
       skip
       expect(distance(3, 3)).to eq(0)
+    end
+  end
+
+  describe "how far apart" do
+    it "return total distance" do
+      expect(sum_distances(sorted_left_list, sorted_right_list)).to eq(11)
     end
   end
 end
