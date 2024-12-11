@@ -7,8 +7,8 @@ def get_right_list(location_id_lists)
 end
 
 def sum_distances(sorted_left_list, sorted_right_list)
-  sorted_left_list.zip(sorted_right_list).map do |pair|
-    (pair[0] - pair[1]).abs
+  sorted_left_list.zip(sorted_right_list).map do |left_pair, right_pair|
+    (left_pair - right_pair).abs
   end.sum
 end
 
