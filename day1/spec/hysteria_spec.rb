@@ -79,7 +79,7 @@ describe "Historian Hysteria" do
   end
 
   describe "how far apart" do
-    it "return total distance" do
+    it "return total distance between left and right list" do
       expect(sum_distances(sorted_left_list, sorted_right_list)).to eq(11)
     end
   end
