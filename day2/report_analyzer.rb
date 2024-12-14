@@ -2,7 +2,6 @@ def is_safe?(report)
   report_list = report.split(' ').map(&:to_i)
 
   # check if elements are all increasing or all decreasing
-  # is safe if uniform direction and difference within range
   increasing = safe_levels?(report_list, '>')
   decreasing = safe_levels?(report_list, '<')
 
@@ -10,6 +9,7 @@ def is_safe?(report)
 end
 
 def safe_levels?(report_list, operator)
+  # is safe if uniform direction and difference within range
   report_list.each_cons(2).all? do |a,b|
     b.send(operator.to_sym, a) && (b-a).abs <= 3
   end
