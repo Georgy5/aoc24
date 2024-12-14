@@ -33,4 +33,10 @@ describe "Historian Hysteria" do
       expect(get_total_distance(left_list, right_list)).to eq(11)
     end
   end
+
+  describe "Similarity Score" do
+    it "calculates total similarity score" do
+      expect(get_similarity_score(left_list, right_list)).to eq(31)
+    end
+  end
 end
