@@ -11,3 +11,6 @@ def multiply(match_string)
     factors.captures.map(&:to_i).reduce(:*)
   end
 end
+
+input = File.read('input').chomp
+p sum_products(input)
