@@ -15,11 +15,23 @@ def safe_levels?(report_list, operator)
   end
 end
 
+def problem_dampener(report)
+  report_list = report.split(' ').map(&:to_i)
+  report_list.each_index.any? do |i|
+    new_list = report_list.clone
+    new_list.delete_at(i)
+    new_report = new_list.join(" ")
+    is_safe?(new_report)
+  end
+end
+
 input = File.readlines('input', chomp: true)
 puts "number of reports: #{input.size} reports"
 
 safe_report_count = 0
 input.each do |report|
-  safe_report_count += 1 if is_safe?(report)
+  if is_safe?(report) || problem_dampener(report)
+    safe_report_count += 1
+  end
 end
 puts "number of safe reports is #{safe_report_count}"
