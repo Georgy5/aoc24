@@ -5,7 +5,7 @@ corrupted_memory_section =
 
 describe "Mull It Over" do
   describe "#sum_products" do
-    it "returns a report found to be safe" do
+    it "ignores invalid characters and adds up the result of each valid instruction" do
       expect(sum_products(corrupted_memory_section)).to eq(161)
     end
   end
